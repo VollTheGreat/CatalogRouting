@@ -87,9 +87,9 @@ class CatalogController extends Controller
      */
     private function pageViewCategory($lang, $products, $categorySlug, $subCategorySlug)
     {
-        $seo = Category::category_seo($lang, $categorySlug);
-        $alternate = Category::alternate_category($lang, $categorySlug);
-        $breadcrumb = Category::breadcrumb_generate_by_slug($lang, $categorySlug);
+        $seo = Category::categorySeo($lang, $categorySlug);
+        $alternate = Category::alternateCategory($lang, $categorySlug);
+        $breadcrumb = Category::breadcrumbGenerateBySlug($lang, $categorySlug);
         $categoryPage = true;
 
         return view('frontend.index')->with(compact('products', 'categorySlug', 'subCategorySlug', 'seo',
